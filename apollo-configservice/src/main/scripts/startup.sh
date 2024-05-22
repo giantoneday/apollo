@@ -1,4 +1,5 @@
 #!/bin/bash
+
 #
 # Copyright 2024 Apollo Authors
 #
@@ -14,6 +15,24 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
+if [ $# -lt 1 ];then
+  echo "执行方式: $0 环境(必填:dev/test/prd) 想要注册上去的ipAddress(选填,用于一些外网可访问的情况)"
+  exit 1
+fi
+
+#增加主动设置ip地址
+environment=$1
+ipAddress="";
+if [ $# -ge 2 ];then
+  ipAddress=$2
+fi
+echo "environment: $environment ipAddress: $ipAddress"
+#不能用这种模式，因为可能test/dev下有多台机器
+# elif [ "$environment" == "dev" ]
+#   ipAddress=""
+
+
 SERVICE_NAME=apollo-configservice
 ## Adjust log dir if necessary
 LOG_DIR=/home/ec2-user/apollo/log
@@ -25,6 +44,11 @@ mkdir -p $LOG_DIR
 
 ## Adjust memory settings if necessary
 #export JAVA_OPTS="-Xms6144m -Xmx6144m -Xss256k -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=384m -XX:NewSize=4096m -XX:MaxNewSize=4096m -XX:SurvivorRatio=8"
+#export JAVA_OPTS="-Xms64m -Xmx512m -Xss256k -XX:MetaspaceSize=64m -XX:MaxMetaspaceSize=256m -XX:NewSize=64m -XX:MaxNewSize=256m -XX:SurvivorRatio=8"
+if [ "$ipAddress" != "" ]
+then
+ export JAVA_OPTS="$JAVA_OPTS -Deureka.instance.ip-address=$ipAddress"
+fi
 
 ## Only uncomment the following when you are using server jvm
 #export JAVA_OPTS="$JAVA_OPTS -server -XX:-ReduceInitialCardMarks"

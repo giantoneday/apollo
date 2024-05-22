@@ -1,1 +1,1 @@
-sudo ./startAdmin.sh && sudo ./startConfig.sh dev prd2 && sudo ./startPortal.sh
+sudo ./startAdmin.sh && sudo ./startConfig.sh prd prd2 && sudo ./startPortal.sh

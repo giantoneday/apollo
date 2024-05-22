@@ -1,6 +1,6 @@
 #!/bin/bash
 if [ $# -lt 2 ];then
-  echo "执行方式: $0 参数1:环境名(dev/test/prod) 参数2:机器名(必填:dev1, test1, test2, prod1, prod2)  参数3:想要注册上去的ipAddress(选填,用于一些外网可访问的情况)"
+  echo "执行方式: $0 参数1:环境名(dev/test/prod) 参数2:机器名(必填:dev1, test1, test2, prd2, prd3)  参数3:想要注册上去的ipAddress(选填,用于一些外网可访问的情况)"
   exit 1
 fi
 
