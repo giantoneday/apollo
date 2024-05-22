@@ -16,22 +16,22 @@
 #
 
 # apollo config db info
-apollo_config_db_url='jdbc:mysql://fill-in-the-correct-server:3306/ApolloConfigDB?characterEncoding=utf8'
-apollo_config_db_username='FillInCorrectUser'
-apollo_config_db_password='FillInCorrectPassword'
+apollo_config_db_url='jdbc:mysql://zapz-prod-db-instance-1.c0umgmknoc3p.us-east-1.rds.amazonaws.com:3306/ApolloConfigDB?characterEncoding=utf8'
+apollo_config_db_username='zapz_prod_admin'
+apollo_config_db_password='ProdYi24daMaiZapzWWnb'
 
 # apollo portal db info
-apollo_portal_db_url='jdbc:mysql://fill-in-the-correct-server:3306/ApolloPortalDB?characterEncoding=utf8'
-apollo_portal_db_username='FillInCorrectUser'
-apollo_portal_db_password='FillInCorrectPassword'
+apollo_portal_db_url='jdbc:mysql://zapz-prod-db-instance-1.c0umgmknoc3p.us-east-1.rds.amazonaws.com:3306/ApolloPortalDB?characterEncoding=utf8'
+apollo_portal_db_username='zapz_prod_admin'
+apollo_portal_db_password='ProdYi24daMaiZapzWWnb'
 
 # meta server url, different environments should have different meta server addresses
-dev_meta=http://fill-in-dev-meta-server:8080
-fat_meta=http://fill-in-fat-meta-server:8080
-uat_meta=http://fill-in-uat-meta-server:8080
-pro_meta=http://fill-in-pro-meta-server:8080
+dev_meta=http://52.4.218.156:8090,http://52.6.174.84:8090
+#fat_meta=http://fill-in-fat-meta-server:8080
+#uat_meta=http://fill-in-uat-meta-server:8080
+#pro_meta=http://fill-in-pro-meta-server:8080
 
-META_SERVERS_OPTS="-Ddev_meta=$dev_meta -Dfat_meta=$fat_meta -Duat_meta=$uat_meta -Dpro_meta=$pro_meta"
+META_SERVERS_OPTS="-Ddev_meta=$dev_meta " #-Dfat_meta=$fat_meta -Duat_meta=$uat_meta -Dpro_meta=$pro_meta"
 
 # =============== Please do not modify the following content =============== #
 # go to script directory

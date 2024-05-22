@@ -29,11 +29,11 @@ spring:
         metadata_builder_contributor: com.ctrip.framework.apollo.common.jpa.SqlFunctionsMetadataBuilderContributor
 
 server:
-  port: 8080
+  port: 8090
 
 logging:
   file:
-    name: /opt/logs/apollo-configservice.log
+    name: /home/ec2-user/apollo/logapollo-configservice.log
 
 eureka:
   instance:
@@ -48,7 +48,7 @@ eureka:
     serviceUrl:
       # This setting will be overridden by eureka.service.url setting from ApolloConfigDB.ServerConfig or System Property
       # see com.ctrip.framework.apollo.biz.eureka.ApolloEurekaClientConfig
-      defaultZone: http://${eureka.instance.hostname}:8080/eureka/
+      defaultZone: http://${eureka.instance.hostname}:8090/eureka/
     healthcheck:
       enabled: true
     eurekaServiceUrlPollIntervalSeconds: 60

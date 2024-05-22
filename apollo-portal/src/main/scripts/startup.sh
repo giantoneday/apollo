@@ -16,7 +16,7 @@
 #
 SERVICE_NAME=apollo-portal
 ## Adjust log dir if necessary
-LOG_DIR=/opt/logs
+LOG_DIR=/home/ec2-user/apollo/log
 ## Adjust server port if necessary
 SERVER_PORT=${SERVER_PORT:=8070}
 
